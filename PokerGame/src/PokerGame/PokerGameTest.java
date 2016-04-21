@@ -16,9 +16,9 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.H, Figura.J);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
-		Karta karta4 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
+		Karta karta4 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -37,9 +37,9 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.H, Figura.A);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
-		Karta karta4 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
+		Karta karta4 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -58,9 +58,9 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.H, Figura.A);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
-		Karta karta4 = new Karta(Kolor.H, Figura.Piatka);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
+		Karta karta4 = new Karta(Kolor.H, Figura.PIATKA);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -80,8 +80,8 @@ public class PokerGameTest {
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.H, Figura.A);
 		Karta karta3 = new Karta(Kolor.S, Figura.A);
-		Karta karta4 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta4 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -100,7 +100,7 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.H, Figura.K);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
 		Karta karta4 = new Karta(Kolor.S, Figura.Q);
 		Karta karta5 = new Karta(Kolor.D, Figura.J);
 		karty.add(karta1);
@@ -120,10 +120,10 @@ public class PokerGameTest {
 		// given
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
-		Karta karta2 = new Karta(Kolor.C, Figura.Dziewiatka);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
-		Karta karta4 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta2 = new Karta(Kolor.C, Figura.DZIEWIATKA);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
+		Karta karta4 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -165,7 +165,7 @@ public class PokerGameTest {
 		Karta karta2 = new Karta(Kolor.H, Figura.A);
 		Karta karta3 = new Karta(Kolor.D, Figura.A);
 		Karta karta4 = new Karta(Kolor.S, Figura.A);
-		Karta karta5 = new Karta(Kolor.C, Figura.Piatka);
+		Karta karta5 = new Karta(Kolor.C, Figura.PIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -184,9 +184,9 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.K);
 		Karta karta2 = new Karta(Kolor.C, Figura.Q);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
 		Karta karta4 = new Karta(Kolor.C, Figura.J);
-		Karta karta5 = new Karta(Kolor.C, Figura.Dziewiatka);
+		Karta karta5 = new Karta(Kolor.C, Figura.DZIEWIATKA);
 		karty.add(karta1);
 		karty.add(karta2);
 		karty.add(karta3);
@@ -205,7 +205,7 @@ public class PokerGameTest {
 		ArrayList<Karta> karty = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.C, Figura.K);
-		Karta karta3 = new Karta(Kolor.C, Figura.Dziesiatka);
+		Karta karta3 = new Karta(Kolor.C, Figura.DZIESIATKA);
 		Karta karta4 = new Karta(Kolor.C, Figura.Q);
 		Karta karta5 = new Karta(Kolor.C, Figura.J);
 		karty.add(karta1);
@@ -308,7 +308,7 @@ public class PokerGameTest {
 		Karta karta6 = new Karta(Kolor.C, Figura.K);
 		Karta karta7 = new Karta(Kolor.D, Figura.K);
 		Karta karta8 = new Karta(Kolor.S, Figura.Q);
-		Karta karta9 = new Karta(Kolor.H, Figura.Dziesiatka);
+		Karta karta9 = new Karta(Kolor.H, Figura.DZIESIATKA);
 		Karta karta10 = new Karta(Kolor.C, Figura.J);
 		kartyGracza2.add(karta6);
 		kartyGracza2.add(karta7);
@@ -342,8 +342,8 @@ public class PokerGameTest {
 		Karta karta6 = new Karta(Kolor.C, Figura.K);
 		Karta karta7 = new Karta(Kolor.D, Figura.A);
 		Karta karta8 = new Karta(Kolor.S, Figura.J);
-		Karta karta9 = new Karta(Kolor.H, Figura.Dwojka);
-		Karta karta10 = new Karta(Kolor.C, Figura.Trojka);
+		Karta karta9 = new Karta(Kolor.H, Figura.DWOJKA);
+		Karta karta10 = new Karta(Kolor.C, Figura.TROJKA);
 		kartyGracza2.add(karta6);
 		kartyGracza2.add(karta7);
 		kartyGracza2.add(karta8);
@@ -364,7 +364,7 @@ public class PokerGameTest {
 		Karta karta2 = new Karta(Kolor.C, Figura.K);
 		Karta karta3 = new Karta(Kolor.C, Figura.J);
 		Karta karta4 = new Karta(Kolor.C, Figura.Q);
-		Karta karta5 = new Karta(Kolor.C, Figura.Dziesiatka);
+		Karta karta5 = new Karta(Kolor.C, Figura.DZIESIATKA);
 		kartyGracza1.add(karta1);
 		kartyGracza1.add(karta2);
 		kartyGracza1.add(karta3);
@@ -375,8 +375,8 @@ public class PokerGameTest {
 		ArrayList<Karta> kartyGracza2 = new ArrayList<Karta>();
 		Karta karta6 = new Karta(Kolor.D, Figura.K);
 		Karta karta7 = new Karta(Kolor.D, Figura.Q);
-		Karta karta8 = new Karta(Kolor.D, Figura.Dziesiatka);
-		Karta karta9 = new Karta(Kolor.D, Figura.Dziewiatka);
+		Karta karta8 = new Karta(Kolor.D, Figura.DZIESIATKA);
+		Karta karta9 = new Karta(Kolor.D, Figura.DZIEWIATKA);
 		Karta karta10 = new Karta(Kolor.D, Figura.J);
 		kartyGracza2.add(karta6);
 		kartyGracza2.add(karta7);
@@ -398,7 +398,7 @@ public class PokerGameTest {
 		Karta karta2 = new Karta(Kolor.D, Figura.K);
 		Karta karta3 = new Karta(Kolor.S, Figura.J);
 		Karta karta4 = new Karta(Kolor.H, Figura.Q);
-		Karta karta5 = new Karta(Kolor.C, Figura.Dziesiatka);
+		Karta karta5 = new Karta(Kolor.C, Figura.DZIESIATKA);
 		kartyGracza1.add(karta1);
 		kartyGracza1.add(karta2);
 		kartyGracza1.add(karta3);
@@ -408,9 +408,9 @@ public class PokerGameTest {
 
 		ArrayList<Karta> kartyGracza2 = new ArrayList<Karta>();
 		Karta karta6 = new Karta(Kolor.C, Figura.K);
-		Karta karta7 = new Karta(Kolor.C, Figura.Dwojka);
+		Karta karta7 = new Karta(Kolor.C, Figura.DWOJKA);
 		Karta karta8 = new Karta(Kolor.C, Figura.Q);
-		Karta karta9 = new Karta(Kolor.C, Figura.Trojka);
+		Karta karta9 = new Karta(Kolor.C, Figura.TROJKA);
 		Karta karta10 = new Karta(Kolor.C, Figura.J);
 		kartyGracza2.add(karta6);
 		kartyGracza2.add(karta7);
@@ -430,7 +430,7 @@ public class PokerGameTest {
 		ArrayList<Karta> kartyGracza1 = new ArrayList<Karta>();
 		Karta karta1 = new Karta(Kolor.C, Figura.A);
 		Karta karta2 = new Karta(Kolor.D, Figura.A);
-		Karta karta3 = new Karta(Kolor.S, Figura.Dziewiatka);
+		Karta karta3 = new Karta(Kolor.S, Figura.DZIEWIATKA);
 		Karta karta4 = new Karta(Kolor.H, Figura.Q);
 		Karta karta5 = new Karta(Kolor.C, Figura.J);
 		kartyGracza1.add(karta1);
@@ -496,8 +496,8 @@ public class PokerGameTest {
 	public void shouldReturnMinus1ParaDwojekZAsemVsParaDwojekZKrolem() {
 		// given
 		ArrayList<Karta> kartyGracza1 = new ArrayList<Karta>();
-		Karta karta1 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta2 = new Karta(Kolor.D, Figura.Dwojka);
+		Karta karta1 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta2 = new Karta(Kolor.D, Figura.DWOJKA);
 		Karta karta3 = new Karta(Kolor.S, Figura.A);
 		Karta karta4 = new Karta(Kolor.H, Figura.Q);
 		Karta karta5 = new Karta(Kolor.C, Figura.J);
@@ -509,8 +509,8 @@ public class PokerGameTest {
 		Reka reka1 = new Reka(kartyGracza1);
 
 		ArrayList<Karta> kartyGracza2 = new ArrayList<Karta>();
-		Karta karta6 = new Karta(Kolor.C, Figura.Dwojka);
-		Karta karta7 = new Karta(Kolor.D, Figura.Dwojka);
+		Karta karta6 = new Karta(Kolor.C, Figura.DWOJKA);
+		Karta karta7 = new Karta(Kolor.D, Figura.DWOJKA);
 		Karta karta8 = new Karta(Kolor.S, Figura.K);
 		Karta karta9 = new Karta(Kolor.D, Figura.Q);
 		Karta karta10 = new Karta(Kolor.H, Figura.J);

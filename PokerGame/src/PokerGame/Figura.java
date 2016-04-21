@@ -1,8 +1,8 @@
 package PokerGame;
 
 public enum Figura {
-	Dwojka(2), Trojka(3), Czworka(4), Piatka(5), Szostka(6), Siodemka(7), Osemka(8), Dziewiatka(9), 
-	Dziesiatka(10), J(11), Q(12), K(13), A(14);
+	DWOJKA(2), TROJKA(3), CZWORKA(4), PIATKA(5), SZOSTKA(6), SIODEMKA(7), OSEMKA(8), DZIEWIATKA(9), 
+	DZIESIATKA(10), J(11), Q(12), K(13), A(14);
 
 	private int value;
 

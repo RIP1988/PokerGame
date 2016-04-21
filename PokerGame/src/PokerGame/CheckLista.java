@@ -24,7 +24,5 @@ public class CheckLista {
 	 * sprawdzenie, czy kareta asow jest mocniejsza od karety kroli
 	 * sprawdzenie, czy gdy w obu rekach para dwojek, as i krol, mocniejsza od reki z waletem jest reka z dama
 	 * 
-	 * public static Uklad ValueOf(1,1,1,1)
-	 * albo mapa, do ktorej daje sie wartosci nextstack, maxstack, inrow itd i z tego mapa zwraca wynik
 	 */
 }

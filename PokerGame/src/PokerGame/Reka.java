@@ -139,10 +139,7 @@ public class Reka {
 				}
 			}
 		}
-		if (roznica == 4 && maxStack < 2) {
-			inRow = true;
-		} else
-			inRow = false;
+		inRow = (roznica == 4 && maxStack < 2);
 
 		if (maxStack == 1 && sameColor && inRow && figureTable[12] == 1) {
 			points = 9;
