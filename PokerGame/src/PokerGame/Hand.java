@@ -3,32 +3,32 @@ package PokerGame;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Reka {
-	private final int ILOSC_KART_W_RECE = 5;
-	private final int ILOSC_FIGUR_W_KAZDYM_Z_KOLOROW = 13;
-	private Karta[] reka;
+public class Hand {
+	private final int NUMBER_OF_CARDS_IN_HAND = 5;
+	private final int NUMBER_OF_FIGURES_IN_EACH_COLOR = 13;
+	private Card[] hand;
 	private int[] figureTable;
 	private int points;
 	private int[] notPairedIndexes = { 0, 0, 0, 0, 0 };
 	private int maxStackIndex;
 	private int nextStackIndex;
-	private boolean sameColor;
-	private boolean inRow;
-	private MapaPunktacji mapaPunktow = new MapaPunktacji();
+	private boolean ifSameColor;
+	private boolean ifInRow;
+	private PointsMap pointsMap = new PointsMap();
 
-	public Reka(ArrayList<Karta> karty) {
-		reka = new Karta[ILOSC_KART_W_RECE];
-		figureTable = new int[ILOSC_FIGUR_W_KAZDYM_Z_KOLOROW];
-		inRow = false;
-		sameColor = true;
+	public Hand(ArrayList<Card> cards) {
+		hand = new Card[NUMBER_OF_CARDS_IN_HAND];
+		figureTable = new int[NUMBER_OF_FIGURES_IN_EACH_COLOR];
+		ifInRow = false;
+		ifSameColor = true;
 		points = 0;
 
 		for (int i : figureTable) {
 			i = 0;
 		}
 
-		for (int i = 0; i < ILOSC_KART_W_RECE; i++) {
-			reka[i] = karty.get(i);
+		for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
+			hand[i] = cards.get(i);
 		}
 
 		fillFigureTable();
@@ -36,37 +36,34 @@ public class Reka {
 		generateResult();
 	}
 
-	private void fillFigureTable() {
-		for (Karta karta : reka) {
-			figureTable[karta.getFigureValue() - 2]++;
-		}
-	}
-
 	public int[] getFigureTable() {
 		return figureTable;
 	}
 
-	public int compareTo(Reka reka) {
+	public int compareTo(Hand hand) {
 		int thisHandPoints = points;
-		int oppositeHandPoints = reka.getPoints();
+		int oppositeHandPoints = hand.getPoints();
+		//sprawdzenie relacji punktowej miedzy obiema rekami
 		if (thisHandPoints > oppositeHandPoints) {
 			return -1;
 		} else if (thisHandPoints < oppositeHandPoints) {
 			return 1;
+			// porownanie wartosci kart w ukladach (np. w przypadku pary w obu
+			// rekach, ktora para jest mocniejsza)
 		} else {
-			if (maxStackIndex > reka.getMaxStackIndex()) {
+			if (maxStackIndex > hand.getMaxStackIndex()) {
 				return -1;
-			} else if (maxStackIndex < reka.getMaxStackIndex()) {
+			} else if (maxStackIndex < hand.getMaxStackIndex()) {
 				return 1;
-			} else if (nextStackIndex > reka.getNextStackIndex()) {
+			} else if (nextStackIndex > hand.getNextStackIndex()) {
 				return -1;
-			} else if (nextStackIndex < reka.getNextStackIndex()) {
+			} else if (nextStackIndex < hand.getNextStackIndex()) {
 				return 1;
 			}
 			// sprawdzenie kolejnych kart spoza ukladu, gdy w ukladzie calkowity
 			// remis
 			int[] notPaired1 = getNotPairedIndexes();
-			int[] notPaired2 = reka.getNotPairedIndexes();
+			int[] notPaired2 = hand.getNotPairedIndexes();
 			for (int i = 0; i < 5; i++) {
 				if (notPaired1[i] > notPaired2[i]) {
 					return -1;
@@ -82,10 +79,18 @@ public class Reka {
 		return points;
 	}
 
+	// wypelnienie 13-elementowej tablicy informacja, ile jakich kart jest w
+	// ukladzie
+	private void fillFigureTable() {
+		for (Card card : hand) {
+			figureTable[card.getFigureValue() - 2]++;
+		}
+	}
+
 	private void checkSameColor() {
-		for (int i = 1; i < reka.length; i++) {
-			if (reka[i].getKolor() != reka[0].getKolor()) {
-				sameColor = false;
+		for (int i = 1; i < hand.length; i++) {
+			if (hand[i].getColor() != hand[0].getColor()) {
+				ifSameColor = false;
 			}
 		}
 	}
@@ -93,7 +98,7 @@ public class Reka {
 	private void generateResult() {
 		int maxStack = 0;
 		int nextStack = 0;
-
+		// okreslenie najwiekszej grupy takich samych figur, oraz kolejnej
 		for (int i = 0; i < figureTable.length; i++) {
 			if (figureTable[i] != 0) {
 				if (figureTable[i] > maxStack) {
@@ -118,6 +123,7 @@ public class Reka {
 				nextStackIndex = temp;
 			}
 		}
+		//wypelnienie tablicy kart nie bedacych w zadnym ukladzie
 		int notPairedIndexesIndex = 0;
 		for (int i = figureTable.length - 1; i >= 0; i--) {
 			if (figureTable[i] != 0 && i != maxStackIndex && i != nextStackIndex) {
@@ -125,26 +131,28 @@ public class Reka {
 				notPairedIndexesIndex++;
 			}
 		}
-		int roznica = 0;
+		//wyliczenie roznicy miedzy kartami
+		int difference = 0;
 		int lastNotZeroIndex = 0;
-		int licznik = 0;
+		int counter = 0;
 		for (int i = 0; i < figureTable.length; i++) {
 			if (figureTable[i] != 0) {
-				if (lastNotZeroIndex == 0 && licznik == 0) {
+				if (lastNotZeroIndex == 0 && counter == 0) {
 					lastNotZeroIndex = i;
-					licznik++;
+					counter++;
 				} else {
-					roznica += i - lastNotZeroIndex;
+					difference += i - lastNotZeroIndex;
 					lastNotZeroIndex = i;
 				}
 			}
 		}
-		inRow = (roznica == 4 && maxStack < 2);
-
-		if (maxStack == 1 && sameColor && inRow && figureTable[12] == 1) {
+		ifInRow = (difference == 4 && maxStack < 2);
+		//sprawdzenie, czy poker krolewski. jesli nie, pobranie liczby punktow z mapy
+		if (maxStack == 1 && ifSameColor && ifInRow && figureTable[12] == 1) {
 			points = 9;
-		} else
-			points = mapaPunktow.get(mapaPunktow.hash(maxStack, nextStack, inRow, sameColor));
+		} else {
+			points = pointsMap.get(pointsMap.hash(maxStack, nextStack, ifInRow, ifSameColor));
+		}
 	}
 
 	private int[] getNotPairedIndexes() {

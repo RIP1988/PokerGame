@@ -8,35 +8,35 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ReadFromFile {
-	private final int OCZEKIWANA_DLUGOSC_WIERSZA = 29;
+	private final int EXPECTED_LINE_LENGTH = 29;
 	private BufferedReader reader = null;
 
-	public ReadFromFile(String zrodlo) {
+	public ReadFromFile(String source) {
 		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream(zrodlo)));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(source)));
 		} catch (FileNotFoundException e) {
 			System.out.println("nie znaleziono pliku");
 		}
 	}
 
 	public ArrayList<String> read() {
-		ArrayList<String> listaWierszy = new ArrayList<String>();
+		ArrayList<String> linesList = new ArrayList<String>();
 		try {
 			String data = reader.readLine();
 			while (data != null) {
 				try {
-					if (data.length() != OCZEKIWANA_DLUGOSC_WIERSZA) {
+					if (data.length() != EXPECTED_LINE_LENGTH) {
 						throw new Exception();
 					}
 				} catch (Exception e) {
 					System.out.println("Niepoprawna dlugosc wiersza w pliku");
 				}
-				listaWierszy.add(data);
+				linesList.add(data);
 				data = reader.readLine();
 			}
 		} catch (IOException e) {
 			System.out.println("Blad wejscia");
 		}
-		return listaWierszy;
+		return linesList;
 	}
 }
